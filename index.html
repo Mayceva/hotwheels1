@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Día de los Hothweels ♥</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  body{
+    margin:0;font-family:'Quicksand',sans-serif;color:#4a2c1a;
+    /* ÚNICO FONDO: ocupa TODA la hoja */
+    background:linear-gradient(135deg,#ff7a1a 0%,#ffd54a 25%,#4f8cff 55%,#b07aff 80%,#ff5c8a 100%);
+    background-attachment:fixed;
+    min-height:100vh;
+  }
+  @keyframes flyAcross{0%{left:-260px;}100%{left:110%;}}
+  @keyframes flyBack{0%{left:110%;}100%{left:-260px;}}
+  @keyframes drift{0%{transform:translateX(-20vw);}100%{transform:translateX(130vw);}}
+  .cloud{position:absolute;left:0;width:140px;height:46px;background:#fff;border-radius:999px;opacity:.92;box-shadow:20px -14px 0 -4px #fff, 46px -6px 0 -8px #fff, -22px -8px 0 -6px #fff;animation:drift linear infinite;}
+  .flier{position:absolute;transform-origin:center;}
+  .flier img{object-fit:contain;display:block;margin:0 auto;filter:drop-shadow(0 4px 6px rgba(0,0,0,.3));}
+  .nube{height:42px;margin:-6px auto 0;background:radial-gradient(ellipse at 30% 60%,#fff 0%,#ffe680 45%,#ffc94a 100%);border-radius:50%;box-shadow:0 6px 14px rgba(255,160,40,.5);}
+  .flip img{transform:scaleX(-1);}
+  .btn{display:block;text-align:center;text-decoration:none;cursor:pointer;font-family:'Bangers',cursive;letter-spacing:3px;font-size:28px;padding:26px 16px;border-radius:20px;border:4px solid var(--c);color:var(--c);background:#fff;transition:transform .15s, background .2s, color .2s;box-shadow:0 6px 16px rgba(0,0,0,.18);}
+  .btn:hover{transform:translateY(-4px) scale(1.02);background:var(--c);color:#fff;}
+</style>
+</head>
+<body>
+
+  <!-- ZONA DE VUELO (transparente, se ve el fondo de colores) -->
+  <div style="position:relative;height:440px;overflow:hidden;">
+    <div style="position:absolute;right:12%;top:12%;width:90px;height:90px;border-radius:50%;background:radial-gradient(circle,#fff6c2,#ffd54a 60%,#ffb347);box-shadow:0 0 70px #ffd54a;"></div>
+    <div class="cloud" style="top:12%;animation-duration:55s;"></div>
+    <div class="cloud" style="top:30%;animation-duration:75s;animation-delay:-20s;transform:scale(.7);"></div>
+    <div class="cloud" style="top:62%;animation-duration:95s;animation-delay:-50s;transform:scale(1.2);"></div>
+    <div class="cloud" style="top:80%;animation-duration:65s;animation-delay:-35s;transform:scale(.55);"></div>
+
+    <!-- PERSONAJE 1: GOKU -->
+    <div class="flier" style="top:38%;left:-260px;transform:scale(1.7);animation:flyAcross 14s linear infinite;">
+      <div style="position:relative;width:150px;">
+        <img src="./PUBLIC/goku-Photoroom.png" alt="Goku" style="width:110px;height:110px;">
+        <div class="nube" style="width:150px;"></div>
+      </div>
+    </div>
+
+    <!-- PERSONAJE 2: MILK -->
+    <div class="flier" style="top:62%;left:-260px;transform:scale(1.35);animation:flyAcross 19s linear infinite;">
+      <div style="position:relative;width:150px;">
+        <img src="./PUBLIC/milk-Photoroom.png" alt="Milk" style="width:110px;height:110px;">
+        <div class="nube" style="width:150px;"></div>
+      </div>
+    </div>
+
+    <!-- PERSONAJE 3: VEGETA (sentido contrario) -->
+    <div class="flier flip" style="top:16%;left:110%;transform:scale(1.3);animation:flyBack 17s linear infinite;">
+      <div style="position:relative;width:150px;">
+        <img src="./PUBLIC/vegeta-Photoroom.png" alt="Vegeta" style="width:110px;height:110px;">
+        <div class="nube" style="width:150px;"></div>
+      </div>
+    </div>
+
+    <!-- PERSONAJE 4: GOHAN -->
+    <div class="flier" style="top:78%;left:-260px;transform:scale(1.15);animation:flyAcross 23s linear infinite;">
+      <div style="position:relative;width:150px;">
+        <img src="./PUBLIC/gohan-Photoroom.png" alt="Gohan" style="width:110px;height:110px;">
+        <div class="nube" style="width:150px;"></div>
+      </div>
+    </div>
+
+    <!-- PERSONAJE 5: TRUNKS (sentido contrario) -->
+    <div class="flier flip" style="top:50%;left:110%;transform:scale(1.25);animation:flyBack 21s linear infinite;">
+      <div style="position:relative;width:150px;">
+        <img src="./PUBLIC/trunks-Photoroom.png" alt="Trunks" style="width:110px;height:110px;">
+        <div class="nube" style="width:150px;"></div>
+      </div>
+    </div>
+
+    <div style="position:absolute;left:0;right:0;top:20px;text-align:center;pointer-events:none;">
+      <div style="font-family:'Bangers',cursive;font-size:clamp(30px,7vw,56px);letter-spacing:2px;color:#fff;text-shadow:2px 3px 0 #e07020, 0 0 20px rgba(255,150,60,.7);">Feliz Día de los Hothweels</div>
+      <div style="color:#fff;font-weight:700;font-size:15px;margin-top:4px;text-shadow:0 1px 4px rgba(0,0,0,.5);">Para mi novio, el único sayayín de mi corazón ♥</div>
+    </div>
+  </div>
+
+  <!-- BOTONES -->
+  <div style="max-width:620px;margin:0 auto;padding:34px 18px;">
+    <div style="display:grid;gap:18px;">
+      <a class="btn" style="--c:#ff8a3c;" href="./seccion1/pagina1.html">😍 NOSOTROS 😍</a>
+      <a class="btn" style="--c:#ff5c8a;" href="./seccion2/pagina2.html">💋 UNA CARTA PARA TI MI SAYAYIN 💋</a>
+      <a class="btn" style="--c:#8a5cff;" href="./seccion3/pagina3.html">🌹 TOME SUS ROSAS 🌹</a>
+    </div>
+    <div style="text-align:center;margin-top:26px;font-size:13px;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.4);">Hecho con ♥ por ti, para ti</div>
+  </div>
+</body>
+</html>
