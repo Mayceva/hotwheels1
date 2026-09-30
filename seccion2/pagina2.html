@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algo Especial ♥</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body{
+    margin:0;font-family:'Quicksand',sans-serif;color:#4a2c1a;
+    background:linear-gradient(135deg,#ff7a1a 0%,#ffd54a 25%,#4f8cff 55%,#b07aff 80%,#ff5c8a 100%);
+    background-attachment:fixed;min-height:100vh;
+  }
+  @keyframes flyAcross{0%{left:-260px;}100%{left:110%;}}
+  @keyframes drift{0%{transform:translateX(-20vw);}100%{transform:translateX(130vw);}}
+  @keyframes heartUp{0%{transform:translateY(0) scale(.6);opacity:0;}15%{opacity:1;}100%{transform:translateY(-110vh) scale(1.2);opacity:0;}}
+  .cloud{position:absolute;left:0;width:140px;height:46px;background:#fff;border-radius:999px;opacity:.92;box-shadow:20px -14px 0 -4px #fff, 46px -6px 0 -8px #fff, -22px -8px 0 -6px #fff;animation:drift linear infinite;}
+  .flier{position:absolute;top:40%;left:-260px;transform:scale(1.4);transform-origin:center;animation:flyAcross 12s linear infinite;}
+  .flier img{width:110px;height:110px;object-fit:contain;display:block;margin:0 auto;filter:drop-shadow(0 4px 6px rgba(0,0,0,.3));}
+  .nube{width:150px;height:42px;margin:-6px auto 0;background:radial-gradient(ellipse at 30% 60%,#fff 0%,#ffe680 45%,#ffc94a 100%);border-radius:50%;box-shadow:0 6px 14px rgba(255,160,40,.5);}
+  .volver{display:inline-block;text-decoration:none;background:#fff;color:#8a5cff;font-weight:700;padding:10px 20px;border-radius:999px;font-size:14px;box-shadow:0 4px 10px rgba(0,0,0,.2);}
+  .btn-sorpresa{cursor:pointer;background:linear-gradient(135deg,#ff5c8a,#8a5cff);color:#fff;font-family:'Bangers',cursive;letter-spacing:3px;font-size:26px;padding:16px 36px;border:none;border-radius:999px;box-shadow:0 8px 24px rgba(255,92,138,.5);transition:transform .15s;}
+  .btn-sorpresa:hover{transform:scale(1.05);}
+  .carta{display:none;max-width:640px;margin:0 auto;background:#fffdf5;border:4px solid #ffd54a;border-radius:20px;padding:28px 26px;box-shadow:0 12px 30px rgba(0,0,0,.25);text-align:left;line-height:1.8;font-size:16px;color:#5a3a20;}
+  .carta h2{font-family:'Bangers',cursive;letter-spacing:2px;color:#e07020;font-size:28px;text-align:center;margin:0 0 14px;}
+  .carta .firma{text-align:right;font-family:'Bangers',cursive;letter-spacing:2px;color:#e04070;font-size:20px;margin-top:18px;}
+  .carta strong{color:#e07020;}
+  #hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:1;}
+  .contenido{position:relative;z-index:2;}
+</style>
+</head>
+<body>
+  <div id="hearts"></div>
+
+  <!-- BANNER -->
+  <div style="position:relative;height:240px;overflow:hidden;">
+    <div style="position:absolute;right:10%;top:14%;width:64px;height:64px;border-radius:50%;background:radial-gradient(circle,#fff6c2,#ffd54a 60%,#ffb347);box-shadow:0 0 50px #ffd54a;"></div>
+    <div class="cloud" style="top:20%;animation-duration:60s;"></div>
+    <div class="cloud" style="top:55%;animation-duration:85s;animation-delay:-30s;transform:scale(.75);"></div>
+    <div class="flier">
+      <img src="../PUBLIC/goku-Photoroom.png" alt="Goku">
+      <div class="nube"></div>
+    </div>
+    <div style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;pointer-events:none;">
+      <div style="font-family:'Bangers',cursive;font-size:clamp(30px,8vw,56px);letter-spacing:3px;color:#fff;text-shadow:3px 4px 0 #8a3ac0, 0 0 24px rgba(180,100,255,.8);">Algo Especial ♥</div>
+    </div>
+  </div>
+
+  <div class="contenido" style="max-width:700px;margin:0 auto;padding:26px 18px 48px;text-align:center;">
+    <a class="volver" href="../index.html">← Volver al inicio</a>
+
+    <div id="antes" style="margin-top:34px;">
+      <p style="color:#fff;font-size:17px;font-weight:600;text-shadow:0 1px 4px rgba(0,0,0,.4);max-width:440px;margin:0 auto 22px;line-height:1.6;">Presiona el botón y pide tu deseo... como cuando Shenlong aparece, pero con más corazón.</p>
+      <button class="btn-sorpresa" id="btnAbrir">¡Abrir mi sorpresa!</button>
+    </div>
+
+    <!-- LA CARTA -->
+    <div class="carta" id="carta">
+      <h2> Mi amor Jonathan:</h2>
+Quiero aprovechar este momento para decirle algo que quizás no le digo lo suficiente: gracias por todo. Gracias por cada momento, por cada palabra, por cada abrazo, por cada sonrisa y, sobre todo, gracias por todo el amor y apoyo que me ha brindado durante estos años.
+Han sido 3 años juntos, llenos de momentos hermosos, aprendizajes, desafíos, alegrías y también momentos difíciles que hemos sabido superar estando juntos. Y cuando miro todo lo que hemos vivido, solo puedo sentirme agradecida por tenerlo a mi lado.
+Gracias por estar conmigo cuando más lo necesito, por escucharme, por aconsejarme, por tenerme paciencia y por hacerme sentir que no estoy sola. Gracias por apoyarme en mis sueños y por creer en mí incluso cuando yo misma he dudado. Su cariño y su forma de estar presente significan muchísimo para mí.
+También quiero decirle que admiro muchísimo la persona que es. Usted es un hombre que lucha por lo que quiere, que no se rinde fácilmente y que se esfuerza día a día por salir adelante. Admiro su fuerza, su perseverancia y todas las cosas que hace por las personas que ama.
+Y hay algo que admiro especialmente de usted: es un excelente papá. Me encanta ver el amor, la preocupación y el esfuerzo que pone en su familia. Sé que ser papá no siempre es fácil, pero usted da lo mejor de sí y eso habla muy bonito de la gran persona que es. Me siento orgullosa de usted por todo lo que hace y por el hombre en el que se ha convertido.
+Gracias por cada uno de estos tres años. Gracias por las aventuras, las conversaciones, las risas, los momentos tranquilos, las locuras y hasta por las discusiones que nos han enseñado a conocernos mejor y a crecer juntos. Cada experiencia ha dejado un pedacito de nuestra historia, y no cambiaría todo lo que hemos vivido por nada.
+Quiero que sepa que lo quiero muchísimo y que valoro cada detalle que tiene conmigo. No necesito grandes cosas para sentirme feliz; muchas veces basta con tenerlo cerca, conversar con usted, reírnos juntos o simplemente saber que está ahí.
+Espero que podamos seguir construyendo nuestra historia, cumpliendo nuestros sueños y acompañándonos en cada etapa que venga. Estos tres años son solo una parte de todo lo que todavía nos queda por vivir. Vamos por muchos años más juntos, por más recuerdos, más aventuras, más risas, más sueños cumplidos y por un futuro lleno de momentos que podamos mirar algún día y decir: “Mire todo lo que hemos construido juntos”.
+Quiero seguir creciendo con usted, aprendiendo a su lado y apoyándolo en cada uno de sus proyectos. Quiero estar ahí para celebrar sus logros, para acompañarlo cuando las cosas se pongan difíciles y para recordarle siempre que puede contar conmigo.
+Gracias por elegirme, por quererme, por cuidarme y por compartir su vida conmigo. Gracias por estos maravillosos tres años y por cada segundo que hemos compartido.
+Le deseo siempre cosas bonitas, porque se las merece. Espero poder seguir siendo parte de su vida por muchísimo tiempo y que nunca nos falten motivos para sonreír juntos.
+Lo amo muchísimo, Jonathan. ❤️
+Con todo mi amor,
+Karin, su novia. 💕
+     
+      <div class="firma">Con todo mi ki, tu Milk ♥</div>
+    </div>
+  </div>
+
+<script>
+  document.getElementById('btnAbrir').addEventListener('click', function(){
+    document.getElementById('antes').style.display = 'none';
+    document.getElementById('carta').style.display = 'block';
+    var colors = ['#ff5c8a','#ffd54a','#ff8adf','#ff9a3c','#b39aff'];
+    var box = document.getElementById('hearts');
+    for(var i=0;i<40;i++){
+      var h = document.createElement('div');
+      h.textContent = '♥';
+      h.style.cssText = 'position:absolute;bottom:-30px;left:'+(Math.random()*100)+'%;font-size:'+(14+Math.random()*28)+'px;color:'+colors[Math.floor(Math.random()*colors.length)]+';animation:heartUp '+(3+Math.random()*3)+'s ease-out '+(Math.random()*2)+'s infinite;';
+      box.appendChild(h);
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería de Fotos · Hothweels</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  body{
+    margin:0;font-family:'Quicksand',sans-serif;color:#4a2c1a;
+    background:linear-gradient(135deg,#ff7a1a 0%,#ffd54a 25%,#4f8cff 55%,#b07aff 80%,#ff5c8a 100%);
+    background-attachment:fixed;min-height:100vh;
+  }
+  @keyframes flyAcross{0%{left:-260px;}100%{left:110%;}}
+  @keyframes flyBack{0%{left:110%;}100%{left:-260px;}}
+  @keyframes drift{0%{transform:translateX(-20vw);}100%{transform:translateX(130vw);}}
+  @keyframes drive{0%{left:-220px;}100%{left:110%;}}
+  @keyframes roadMove{from{background-position:0 0;}to{background-position:-60px 0;}}
+  .cloud{position:absolute;left:0;width:140px;height:46px;background:#fff;border-radius:999px;opacity:.92;box-shadow:20px -14px 0 -4px #fff, 46px -6px 0 -8px #fff, -22px -8px 0 -6px #fff;animation:drift linear infinite;}
+  .flier{position:absolute;transform-origin:center;}
+  .flier img{object-fit:contain;display:block;margin:0 auto;filter:drop-shadow(0 4px 6px rgba(0,0,0,.3));}
+  .nube{height:42px;margin:-6px auto 0;background:radial-gradient(ellipse at 30% 60%,#fff 0%,#ffe680 45%,#ffc94a 100%);border-radius:50%;box-shadow:0 6px 14px rgba(255,160,40,.5);}
+  .flip img{transform:scaleX(-1);}
+  .volver{display:inline-block;text-decoration:none;background:#fff;color:#e07020;font-weight:700;padding:10px 20px;border-radius:999px;font-size:14px;box-shadow:0 4px 10px rgba(0,0,0,.2);}
+  .foto{cursor:pointer;border-radius:14px;overflow:hidden;box-shadow:0 6px 14px rgba(0,0,0,.2);transition:transform .2s;aspect-ratio:1;}
+  .foto:hover{transform:scale(1.04);}
+  .foto img{width:100%;height:100%;object-fit:cover;display:block;}
+  #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:50;cursor:pointer;padding:20px;}
+  #lightbox img{max-width:100%;max-height:90vh;border-radius:12px;box-shadow:0 0 40px rgba(255,213,74,.5);}
+
+  /* CARRETERA + AUTO (auto encima de la carretera) */
+  .road{position:absolute;bottom:0;left:0;right:0;height:56px;background:linear-gradient(#3a3a3a,#222);border-top:3px solid #555;z-index:1;}
+  .road-line{position:absolute;top:50%;left:0;right:0;height:5px;transform:translateY(-50%);background:repeating-linear-gradient(90deg,#ffd54a 0 30px,transparent 30px 60px);animation:roadMove .45s linear infinite;}
+  .auto{position:absolute;bottom:50px;left:-220px;animation:drive 9s linear infinite;filter:drop-shadow(0 6px 6px rgba(0,0,0,.35));z-index:2;}
+  .auto img{width:180px;height:auto;display:block;}
+</style>
+</head>
+<body>
+
+  <!-- BANNER DINÁMICO DRAGON BALL -->
+  <div style="position:relative;height:300px;overflow:hidden;">
+    <div style="position:absolute;right:10%;top:12%;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle,#fff6c2,#ffd54a 60%,#ffb347);box-shadow:0 0 60px #ffd54a;"></div>
+    <div class="cloud" style="top:14%;animation-duration:55s;"></div>
+    <div class="cloud" style="top:42%;animation-duration:80s;animation-delay:-25s;transform:scale(.8);"></div>
+
+    <!-- GOKU VOLANDO -->
+    <div class="flier" style="top:26%;left:-260px;transform:scale(1.4);animation:flyAcross 12s linear infinite;">
+      <div style="position:relative;width:150px;">
+        <img src="../PUBLIC/goku-Photoroom.png" alt="Goku" style="width:110px;height:110px;">
+        <div class="nube" style="width:150px;"></div>
+      </div>
+    </div>
+
+    <!-- VEGETA EN SENTIDO CONTRARIO -->
+    <div class="flier flip" style="top:48%;left:110%;transform:scale(1.1);animation:flyBack 16s linear infinite;">
+      <div style="position:relative;width:150px;">
+        <img src="../PUBLIC/vegeta-Photoroom.png" alt="Vegeta" style="width:110px;height:110px;">
+        <div class="nube" style="width:150px;"></div>
+      </div>
+    </div>
+
+    <!-- CARRETERA -->
+    <div class="road">
+      <div class="road-line"></div>
+    </div>
+
+    <!-- AUTO manejando ENCIMA de la carretera -->
+    <div class="auto">
+      <img src="../PUBLIC/lambo-Photoroom.png" alt="Auto">
+    </div>
+
+    <div style="position:absolute;left:0;right:0;top:34%;text-align:center;pointer-events:none;z-index:3;">
+      <div style="font-family:'Bangers',cursive;font-size:clamp(32px,8vw,60px);letter-spacing:3px;color:#fff;text-shadow:3px 4px 0 #e07020, 0 0 24px rgba(255,150,60,.8);">Galería de Fotos</div>
+      <div style="color:#fff;font-weight:700;font-size:14px;margin-top:6px;text-shadow:0 1px 4px rgba(0,0,0,.5);">Nuestros momentos más sayayines ♥</div>
+    </div>
+  </div>
+
+  <!-- CONTENIDO -->
+  <div style="max-width:900px;margin:0 auto;padding:24px 18px 48px;">
+    <a class="volver" href="../index.html">← Volver al inicio</a>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:20px;" id="galeria">
+      <div class="foto"><img src="/public/karin1.jpg" alt="Momento 1"></div>
+      <div class="foto"><img src="/public/karin2.jpg" alt="Momento 2"></div>
+      <div class="foto"><img src="/public/karin3.jpg" alt="Momento 3"></div>
+      <div class="foto"><img src="/public/karin4.jpg" alt="Momento 4"></div>
+      <div class="foto"><img src="/public/karin5.jpg" alt="Momento 5"></div>
+       <div class="foto"><img src="/public/karin6.jpg" alt="Momento 6"></div>
+      <div class="foto"><img src="/public/karin7.jpg" alt="Momento 7"></div>
+      <div class="foto"><img src="/public/karin8.jpg" alt="Momento 8"></div>
+      <div class="foto"><img src="/public/karin9.jpg" alt="Momento 9"></div>
+      <div class="foto"><img src="/public/karin10.jpg" alt="Momento 10"></div>
+      <div class="foto"><img src="/public/krin11.jpg" alt="Momento 11"></div>
+      <div class="foto"><img src="/public/karin12.jpg" alt="Momento 12"></div>
+      <div class="foto"><img src="/public/karin13.jpg" alt="Momento 13"></div>
+      <div class="foto"><img src="/public/karin14.jpg" alt="Momento 14"></div>
+      <div class="foto"><img src="/public/karin15.jpg" alt="Momento 15"></div>
+    </div>
+
+    <div style="text-align:center;margin-top:28px;font-size:13px;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.4);">Toca cualquier foto para verla en grande ♥</div>
+  </div>
+
+  <div id="lightbox"><img id="lightboxImg" src="" alt="zoom"></div>
+
+<script>
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.foto img').forEach(function(im){
+    im.addEventListener('click', function(){
+      lbImg.src = this.src;
+      lb.style.display = 'flex';
+    });
+  });
+  lb.addEventListener('click', function(){ lb.style.display = 'none'; });
+</script>
+</body>
+</html>
